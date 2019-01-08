@@ -17,7 +17,6 @@
         $short = fread($short_handle, filesize($short_files[$short_display_index]));
     }
     
-    
     $display_date = null;
     
     // not working: more shorts thing
@@ -27,7 +26,7 @@
     else
         $sf = null;
     
-    
+    $file = null;
     // get and create file string: selected or latest blog post file name
     if($display_text){
         $file = '../include/body/' . $display_text;
@@ -35,7 +34,8 @@
     else{
         $body_files = glob('../include/body/*.txt');
         $body_count = count($body_files);
-        $file = $body_files[$body_count - 1];
+        if($body_count)
+            $file = $body_files[$body_count - 1];
     }
     
     // get body text if file exits
@@ -56,6 +56,8 @@
     // remove html format tags
     $titleString = strip_tags($titleString);
     $textString = strip_tags($textString);
+    
+    $hh = new configStrings();
     
     // get filenames for last five posts menu
     $armenu_r = archive_menu();

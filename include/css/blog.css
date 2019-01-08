@@ -38,6 +38,30 @@ blockquote{
     /*width: 80px;*/
 }
 
+.signin{
+   position: fixed;
+   height: 40vh;
+   left: 35%;
+   top: 30%;
+   width: 30%; 
+}
+
+.signin_inner{
+    border: 1px solid black;
+    font-size: .9em;
+    margin: auto;
+    margin-top: 10%;
+    text-align: left;
+    width: 80%;
+}
+
+.signin_inner input[type='text'],[type='password'],[type='email']{
+    font-size: 1.1em;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
 .replies{       /* blockquote styling for comment replies */
     background-color: #DDDDDD;  /* 221 221 221 */
 	margin-left: auto;

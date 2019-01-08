@@ -1,35 +1,35 @@
 <!DOCTYPE HTML>
 <!-- written by James Dark et al.  -->
 <html lang="en">
-
+<!--  
+  user = James Dark, jd@jdbtw.com
+  blog_subject = conservative commentary
+  -->
   <head>
     <meta charset="UTF-8">
-    
-    <meta name="subject" content="conservative commentary">
-    <meta name="author" content="James Dark, jd@jdbtw.com">
-
-    
-    <meta property="og:url" content="<?= $dis_url ?>" />
-    <meta property="og:type" content="blog" />
-    <meta property="og:title" content="<?=$titleString?>"/>
-    <meta property="og:description" content="Conservative commentary on today's politics"/>
-    <meta name="og:site_name" content="A Darker View"/>
+    <? if(isset($blogpage)): ?>
+        <meta name="subject" content="<?= $blog_subject ?>">
+        <meta name="author" content="<?= $user ?>">
+        <meta property="og:url" content="<?= $dis_url ?>" />
+        <meta property="og:type" content="blog" />
+        <meta property="og:title" content="<?=$titleString?>"/>
+        <meta property="og:description"
+                         content="Conservative commentary on today's politics"/>
+        <meta name="og:site_name" content="A Darker View"/>
+        <title><?= $hh->getTitleSting() ?></title>
+    <? endif; ?>
+    <? if(isset($adminpage)): ?>
+        <title><?= $titleString ?></title>
+    <? endif; ?>
     
     <link href="../include/css/blog.css" rel="stylesheet" />
-
-    <title><?= $titleString ?></title>
-
-    <style></style>
-    <!--  <?= $textString ?>
-        h3 {border: 1px solid black;}
-        body { border: 1px solid black; }
-        div { border: 1px solid black;  }
-        p { border: 1px solid black;  }
-    -->
     
   </head>
-
   <body>
+  <? if(isset($adminpage)): ?>
+    <h2>miniBlog Administration Configuration Page</h2>
+  <? endif; ?>
+  <? if(isset($blogpage)): ?>
   <div class="headwrapper">
   <h3>A Darker View</h3>
   <p class="t2">
@@ -38,4 +38,5 @@
   looking at the darker and slimier side of leftist / liberal dogma, trying to
   expose the BS for what it truly is.</p>
   <p class="t2" style="font-size:160%;">James Dark</div>
-
+  <? endif; ?>
+  

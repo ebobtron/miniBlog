@@ -39,6 +39,7 @@
   <p class="pad">
     <form action="/" method="get" id="blog_form">
     <ul>
+      <? if($armenu_r): ?>
       <? foreach($armenu_r as $li): ?>
         <li>
             <button class="menu" type="submit" name="text" value="<?= $li['file'] ?>">
@@ -46,6 +47,7 @@
             </button>
         </li>
       <? endforeach; ?>  
+      <? endif; ?>
     </ul>
     </form>
     <button class="menu" onclick="pop_contents();" >more...</button>
@@ -108,6 +110,7 @@
 <div class="popupWindow" id="popupWin">
 
   <div class="contentsWindow">
+    <? if($content_list): ?>
     <? foreach($content_list as $blog): ?>
         
       <p style="text-align: left;">
@@ -121,7 +124,8 @@
             <h3><?= $blog['title'] ?></h3>
             <?= $blog['clip'] ?>
             </blockquote>
-      <? endforeach; ?>
+    <? endforeach; ?>
+    <? endif; ?>  
   </div>
 </div>
 
